@@ -7,13 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OverviewViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+    }
+    
+    func setupView() {
+        
         
     }
 
 
 }
-
