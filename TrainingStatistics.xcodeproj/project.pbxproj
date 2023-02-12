@@ -21,6 +21,7 @@
 		0912EDB4299815EE0006CC38 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDB3299815EE0006CC38 /* SessionController.swift */; };
 		0912EDB6299815FF0006CC38 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDB5299815FF0006CC38 /* ProgressController.swift */; };
 		0912EDB82998160E0006CC38 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDB72998160E0006CC38 /* SettingsController.swift */; };
+		0912EDBB29981D010006CC38 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDBA29981D010006CC38 /* SecondaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0912EDB3299815EE0006CC38 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		0912EDB5299815FF0006CC38 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		0912EDB72998160E0006CC38 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		0912EDBA29981D010006CC38 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		0912EDAD299815910006CC38 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				0912EDB929981CCE0006CC38 /* Views */,
 				0912ED892997F8370006CC38 /* OverviewViewController.swift */,
 			);
 			name = Overview;
@@ -169,6 +172,14 @@
 				0912EDB72998160E0006CC38 /* SettingsController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		0912EDB929981CCE0006CC38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0912EDBA29981D010006CC38 /* SecondaryButton.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				0912ED9D299800910006CC38 /* TabBarController.swift in Sources */,
 				0912ED862997F8370006CC38 /* AppDelegate.swift in Sources */,
 				0912EDB4299815EE0006CC38 /* SessionController.swift in Sources */,
+				0912EDBB29981D010006CC38 /* SecondaryButton.swift in Sources */,
 				0912EDB6299815FF0006CC38 /* ProgressController.swift in Sources */,
 				0912EDA529980FB30006CC38 /* NavBarController.swift in Sources */,
 				0912EDA0299801350006CC38 /* UIColor + ext.swift in Sources */,
