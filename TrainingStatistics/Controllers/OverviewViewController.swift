@@ -9,7 +9,7 @@ import UIKit
 
 class OverviewViewController: BaseController {
     
-    private let allWorkoutsButton = SecondaryButton()
+    private let navBar = OverviewNavBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,26 +27,28 @@ extension OverviewViewController {
     override func addView() {
         super.addView()
         
-        view.addSubview(allWorkoutsButton)
+        view.addSubview(navBar)
     }
     
     override func constraints() {
         super.constraints()
         
         NSLayoutConstraint.activate([
-            allWorkoutsButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            allWorkoutsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            allWorkoutsButton.heightAnchor.constraint(equalToConstant: 28),
-            allWorkoutsButton.widthAnchor.constraint(equalToConstant: 130)
+            
+            navBar.topAnchor.constraint(equalTo: view.topAnchor),
+            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
         ])
     }
     
     override func configure() {
         super.configure()
         
-        allWorkoutsButton.setTitle(Resources.Strings.Overview.allWorkOutsButton)
-        allWorkoutsButton.addTarget(self, action: #selector(allWorkoutsButtonAction), for: .touchUpInside)
-        allWorkoutsButton.translatesAutoresizingMaskIntoConstraints = false
+        navigationController?.navigationBar.isHidden = true
+        
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        
     }
 }
 
