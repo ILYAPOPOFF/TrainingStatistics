@@ -24,6 +24,9 @@
 		0912EDBB29981D010006CC38 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDBA29981D010006CC38 /* SecondaryButton.swift */; };
 		09C73E4F29998F35001DACD0 /* OverviewNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C73E4E29998F35001DACD0 /* OverviewNavBar.swift */; };
 		09C73E5129998F85001DACD0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C73E5029998F85001DACD0 /* BaseView.swift */; };
+		09C73E54299A34AE001DACD0 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C73E53299A34AE001DACD0 /* WeekView.swift */; };
+		09E45558299AA9B800FEC456 /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E45557299AA9B800FEC456 /* WeekdayView.swift */; };
+		09E4555A299AB04800FEC456 /* Date + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E45559299AB04800FEC456 /* Date + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		0912EDBA29981D010006CC38 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		09C73E4E29998F35001DACD0 /* OverviewNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewNavBar.swift; sourceTree = "<group>"; };
 		09C73E5029998F85001DACD0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		09C73E53299A34AE001DACD0 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		09E45557299AA9B800FEC456 /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
+		09E45559299AB04800FEC456 /* Date + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 			children = (
 				0912ED9F299801350006CC38 /* UIColor + ext.swift */,
 				0912EDAA299814160006CC38 /* UIView + ext.swift */,
+				09E45559299AB04800FEC456 /* Date + ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -182,10 +189,20 @@
 		0912EDB929981CCE0006CC38 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09C73E52299A3491001DACD0 /* WeekView */,
 				0912EDBA29981D010006CC38 /* SecondaryButton.swift */,
 				09C73E4E29998F35001DACD0 /* OverviewNavBar.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		09C73E52299A3491001DACD0 /* WeekView */ = {
+			isa = PBXGroup;
+			children = (
+				09C73E53299A34AE001DACD0 /* WeekView.swift */,
+				09E45557299AA9B800FEC456 /* WeekdayView.swift */,
+			);
+			name = WeekView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C73E54299A34AE001DACD0 /* WeekView.swift in Sources */,
+				09E4555A299AB04800FEC456 /* Date + ext.swift in Sources */,
 				0912EDB82998160E0006CC38 /* SettingsController.swift in Sources */,
 				0912ED8A2997F8370006CC38 /* OverviewViewController.swift in Sources */,
 				09C73E4F29998F35001DACD0 /* OverviewNavBar.swift in Sources */,
@@ -271,6 +290,7 @@
 				0912EDA0299801350006CC38 /* UIColor + ext.swift in Sources */,
 				0912EDA32998016C0006CC38 /* Resources.swift in Sources */,
 				09C73E5129998F85001DACD0 /* BaseView.swift in Sources */,
+				09E45558299AA9B800FEC456 /* WeekdayView.swift in Sources */,
 				0912EDA9299811C10006CC38 /* BaseController.swift in Sources */,
 				0912ED882997F8370006CC38 /* SceneDelegate.swift in Sources */,
 			);

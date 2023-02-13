@@ -18,7 +18,7 @@ class BaseController: UIViewController {
         super.viewDidLoad()
         
         addView()
-        constraints()
+        constraint()
         configure()
     }
 }
@@ -27,7 +27,7 @@ class BaseController: UIViewController {
     
     func addView() {}
     
-    func constraints() {}
+    func constraint() {}
     
     func configure() {
         view.backgroundColor = Resources.Colors.background

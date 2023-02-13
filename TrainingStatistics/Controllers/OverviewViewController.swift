@@ -30,8 +30,8 @@ extension OverviewViewController {
         view.addSubview(navBar)
     }
     
-    override func constraints() {
-        super.constraints()
+    override func constraint() {
+        super.constraint()
         
         NSLayoutConstraint.activate([
             
