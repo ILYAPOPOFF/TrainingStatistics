@@ -17,7 +17,7 @@ class ProgressViewController: BaseController {
     
     func setupView() {
         title = "Workout Progress"
-        navigationController?.tabBarItem.title = Resources.Strings.TabBar.progress
+        navigationController?.tabBarItem.title = R.Strings.TabBar.progress
         
         addNavbarButton(at: .left, with: "Export")
         addNavbarButton(at: .right, with: "Details")

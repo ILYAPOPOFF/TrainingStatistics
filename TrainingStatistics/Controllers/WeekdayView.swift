@@ -24,30 +24,30 @@ extension WeekView {
             
             let isToday = currentDay.stripTime() == Date().stripTime()
             
-            backgroundColor = isToday ? Resources.Colors.active : Resources.Colors.background
+            backgroundColor = isToday ? R.Colors.active : R.Colors.background
             
             nameLabel.text = name.uppercased()
-            nameLabel.textColor = isToday ? .white : Resources.Colors.inActive
+            nameLabel.textColor = isToday ? .white : R.Colors.inActive
             
             dateLabel.text = "\(day)"
-            dateLabel.textColor = isToday ? .white : Resources.Colors.inActive
+            dateLabel.textColor = isToday ? .white : R.Colors.inActive
         }
     }
 }
 
 extension WeekView.WeekdayView {
 
-    override func addView() {
-        super.addView()
+    override func setupViews() {
+        super.setupViews()
         
-        addView(stackView)
+        setupView(stackView)
         
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(dateLabel)
     }
 
-    override func constraint() {
-        super.constraint()
+    override func constraintViews() {
+        super.constraintViews()
 
         NSLayoutConstraint.activate([
 
@@ -57,21 +57,21 @@ extension WeekView.WeekdayView {
         ])
     }
 
-    override func configureView() {
-        super.configureView()
+    override func configureAppearance() {
+        super.configureAppearance()
         
-        backgroundColor = Resources.Colors.background
+        backgroundColor = R.Colors.background
         
         
         layer.cornerRadius = 5
         layer.masksToBounds = true
         
-        nameLabel.font = Resources.Fonts.helveticaRegular(with: 9)
-        nameLabel.textColor = Resources.Colors.titleGray
+        nameLabel.font = R.Fonts.helveticaRegular(with: 9)
+        nameLabel.textColor = R.Colors.titleGray
         nameLabel.textAlignment = .center
         
-        dateLabel.font = Resources.Fonts.helveticaRegular(with: 15)
-        dateLabel.textColor = Resources.Colors.titleGray
+        dateLabel.font = R.Fonts.helveticaRegular(with: 15)
+        dateLabel.textColor = R.Colors.titleGray
         dateLabel.textAlignment = .center
         
         stackView.spacing = 3

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Tabs: Int {
+enum Tabs: Int, CaseIterable {
     case overview
     case session
     case progress
@@ -27,11 +27,11 @@ class TabBarController: UITabBarController {
     }
     
     private func configure() {
-        tabBar.tintColor = Resources.Colors.active
-        tabBar.barTintColor = Resources.Colors.inActive
+        tabBar.tintColor = R.Colors.active
+        tabBar.barTintColor = R.Colors.inActive
         tabBar.backgroundColor = .white
         
-        tabBar.layer.borderColor = Resources.Colors.separator.cgColor
+        tabBar.layer.borderColor = R.Colors.separator.cgColor
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
@@ -45,13 +45,22 @@ class TabBarController: UITabBarController {
         let progressNavigation = NavBarController(rootViewController: progressController)
         let settingsNavigation = NavBarController(rootViewController: settingsController)
         
-        overviewNavigation.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.overview, image: Resources.Image.TabBar.overview, tag: Tabs.overview.rawValue)
-        sessionsNavigation.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.session, image: Resources.Image.TabBar.session, tag: Tabs.session.rawValue)
-        progressNavigation.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.progress, image: Resources.Image.TabBar.progress, tag: Tabs.progress.rawValue)
-        settingsNavigation.tabBarItem = UITabBarItem(title: Resources.Strings.TabBar.settings, image: Resources.Image.TabBar.settings, tag: Tabs.settings.rawValue)
+        overviewNavigation.tabBarItem = UITabBarItem(title: R.Strings.TabBar.overview, image: R.Image.TabBar.overview, tag: Tabs.overview.rawValue)
+        sessionsNavigation.tabBarItem = UITabBarItem(title: R.Strings.TabBar.session, image: R.Image.TabBar.session, tag: Tabs.session.rawValue)
+        progressNavigation.tabBarItem = UITabBarItem(title: R.Strings.TabBar.progress, image: R.Image.TabBar.progress, tag: Tabs.progress.rawValue)
+        settingsNavigation.tabBarItem = UITabBarItem(title: R.Strings.TabBar.settings, image: R.Image.TabBar.settings, tag: Tabs.settings.rawValue)
         
         setViewControllers([
             overviewNavigation, sessionsNavigation, progressNavigation, settingsNavigation
         ], animated: false)
+    }
+    
+    private func getController(for tab: Tabs) -> BaseController {
+        switch tab {
+        case .overview: return OverviewViewController()
+        case .session: return SessionViewController()
+        case .progress: return ProgressViewController()
+        case .settings: return SettingsViewController()
+        }
     }
 }

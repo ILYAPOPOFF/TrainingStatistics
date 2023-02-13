@@ -14,7 +14,7 @@
 		0912ED922997F8390006CC38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0912ED902997F8390006CC38 /* LaunchScreen.storyboard */; };
 		0912ED9D299800910006CC38 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912ED9C299800910006CC38 /* TabBarController.swift */; };
 		0912EDA0299801350006CC38 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912ED9F299801350006CC38 /* UIColor + ext.swift */; };
-		0912EDA32998016C0006CC38 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA22998016C0006CC38 /* Resources.swift */; };
+		0912EDA32998016C0006CC38 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA22998016C0006CC38 /* R.swift */; };
 		0912EDA529980FB30006CC38 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA429980FB30006CC38 /* NavBarController.swift */; };
 		0912EDA9299811C10006CC38 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA8299811C10006CC38 /* BaseController.swift */; };
 		0912EDAB299814160006CC38 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDAA299814160006CC38 /* UIView + ext.swift */; };
@@ -27,6 +27,7 @@
 		09C73E54299A34AE001DACD0 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C73E53299A34AE001DACD0 /* WeekView.swift */; };
 		09E45558299AA9B800FEC456 /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E45557299AA9B800FEC456 /* WeekdayView.swift */; };
 		09E4555A299AB04800FEC456 /* Date + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E45559299AB04800FEC456 /* Date + ext.swift */; };
+		09E4555D299AD50700FEC456 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E4555C299AD50700FEC456 /* BaseInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,7 @@
 		0912ED932997F8390006CC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0912ED9C299800910006CC38 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0912ED9F299801350006CC38 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
-		0912EDA22998016C0006CC38 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		0912EDA22998016C0006CC38 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		0912EDA429980FB30006CC38 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		0912EDA8299811C10006CC38 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		0912EDAA299814160006CC38 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		09C73E53299A34AE001DACD0 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		09E45557299AA9B800FEC456 /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		09E45559299AB04800FEC456 /* Date + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + ext.swift"; sourceTree = "<group>"; };
+		09E4555C299AD50700FEC456 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0912EDA12998013E0006CC38 /* Extensions */,
-				0912EDA22998016C0006CC38 /* Resources.swift */,
+				0912EDA22998016C0006CC38 /* R.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -145,6 +147,7 @@
 		0912EDAC299815720006CC38 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				09E4555B299AD4F300FEC456 /* Views */,
 				0912ED9C299800910006CC38 /* TabBarController.swift */,
 				0912EDA429980FB30006CC38 /* NavBarController.swift */,
 				0912EDA8299811C10006CC38 /* BaseController.swift */,
@@ -203,6 +206,14 @@
 				09E45557299AA9B800FEC456 /* WeekdayView.swift */,
 			);
 			name = WeekView;
+			sourceTree = "<group>";
+		};
+		09E4555B299AD4F300FEC456 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09E4555C299AD50700FEC456 /* BaseInfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E4555D299AD50700FEC456 /* BaseInfoView.swift in Sources */,
 				09C73E54299A34AE001DACD0 /* WeekView.swift in Sources */,
 				09E4555A299AB04800FEC456 /* Date + ext.swift in Sources */,
 				0912EDB82998160E0006CC38 /* SettingsController.swift in Sources */,
@@ -288,7 +300,7 @@
 				0912EDB6299815FF0006CC38 /* ProgressController.swift in Sources */,
 				0912EDA529980FB30006CC38 /* NavBarController.swift in Sources */,
 				0912EDA0299801350006CC38 /* UIColor + ext.swift in Sources */,
-				0912EDA32998016C0006CC38 /* Resources.swift in Sources */,
+				0912EDA32998016C0006CC38 /* R.swift in Sources */,
 				09C73E5129998F85001DACD0 /* BaseView.swift in Sources */,
 				09E45558299AA9B800FEC456 /* WeekdayView.swift in Sources */,
 				0912EDA9299811C10006CC38 /* BaseController.swift in Sources */,

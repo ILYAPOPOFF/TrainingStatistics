@@ -18,7 +18,7 @@ final class OverviewNavBar: BaseView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        addBottomBorder(with: Resources.Colors.separator, height: 1)
+        addBottomBorder(with: R.Colors.separator, height: 1)
     }
     
     func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
@@ -32,17 +32,17 @@ final class OverviewNavBar: BaseView {
 }
 
 extension OverviewNavBar {
-    override func addView() {
-        super.addView()
+    override func setupViews() {
+        super.setupViews()
         
-        addView(titleLabel)
-        addView(addButton)
-        addView(allWorkoutsButton)
-        addView(weekView)
+        setupView(titleLabel)
+        setupView(addButton)
+        setupView(allWorkoutsButton)
+        setupView(weekView)
     }
     
-    override func constraint() {
-        super.constraint()
+    override func constraintViews() {
+        super.constraintViews()
         
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
@@ -67,18 +67,18 @@ extension OverviewNavBar {
         ])
     }
     
-    override func configureView() {
-        super.configureView()
+    override func configureAppearance() {
+        super.configureAppearance()
         
         backgroundColor = .white
         
-        titleLabel.text = Resources.Strings.NavBar.overview
-        titleLabel.textColor = Resources.Colors.titleGray
-        titleLabel.font = Resources.Fonts.helveticaRegular(with: 22)
+        titleLabel.text = R.Strings.NavBar.overview
+        titleLabel.textColor = R.Colors.titleGray
+        titleLabel.font = R.Fonts.helveticaRegular(with: 22)
         
-        allWorkoutsButton.setTitle(Resources.Strings.Overview.allWorkOutsButton)
+        allWorkoutsButton.setTitle(R.Strings.Overview.allWorkOutsButton)
         
-        addButton.setImage(Resources.Image.Common.add, for: .normal)
+        addButton.setImage(R.Image.Common.add, for: .normal)
         
     }
 }
