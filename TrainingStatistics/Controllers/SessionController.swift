@@ -9,9 +9,8 @@ import UIKit
 
 class SessionViewController: BaseController {
     
-    private let timerView : BaseInfoView = {
-        let view = BaseInfoView(with: "Test", alignment: .center)
-        
+    private let timerView : WABaseInfoView = {
+        let view = WABaseInfoView(with: "Test", buttonTitlte: "Text button".uppercased())
         return view
     }()
     
