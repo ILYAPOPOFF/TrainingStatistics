@@ -7,12 +7,30 @@
 
 import UIKit
 
-class SessionViewController: BaseController {
+class SessionViewController: WABaseController {
     
-    private let timerView : TimerView = {
-        let view = TimerView()
-        return view
-    }()
+    private let timerView = TimerView()
+    
+    private let timerDuration = 3.0
+    
+    override func navBarLeftButtonHandler() {
+        if timerView.state == .isStopped {
+            timerView.startTimer()
+        } else {
+            timerView.pauseTimer()
+        }
+        
+        timerView.state = timerView.state == .isRunning ? .isStopped : .isRunning
+        setTitleForNavbarButton(timerView.state == .isRunning ? "Pause" : "Start   ", at: .left)
+        
+    }
+    
+    override func navBarRightButtonHandler() {
+        timerView.stopTimer()
+        timerView.state = .isStopped
+        
+        setTitleForNavbarButton("Start   ", at: .left)
+    }
     
 }
 
@@ -42,8 +60,10 @@ extension SessionViewController {
         title = "High Intensity Cardio"
         navigationController?.tabBarItem.title = R.Strings.TabBar.session
         
-        addNavbarButton(at: .left, with: "Pause")
+        addNavbarButton(at: .left, with: "Start   ")
         addNavbarButton(at: .right, with: "Finish")
+        
+        timerView.configure(with: timerDuration, progress: 0)
     }
 }
 

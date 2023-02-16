@@ -60,7 +60,7 @@ class TabBarController: UITabBarController {
         ], animated: false)
     }
     
-    private func getController(for tab: Tabs) -> BaseController {
+    private func getController(for tab: Tabs) -> WABaseController {
         switch tab {
         case .overview: return OverviewViewController()
         case .session: return SessionViewController()

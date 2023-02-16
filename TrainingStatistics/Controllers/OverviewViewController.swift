@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OverviewViewController: BaseController {
+class OverviewViewController: WABaseController {
     
     private let navBar = OverviewNavBar()
 

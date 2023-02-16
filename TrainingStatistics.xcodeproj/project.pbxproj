@@ -16,7 +16,7 @@
 		0912EDA0299801350006CC38 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912ED9F299801350006CC38 /* UIColor + ext.swift */; };
 		0912EDA32998016C0006CC38 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA22998016C0006CC38 /* R.swift */; };
 		0912EDA529980FB30006CC38 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA429980FB30006CC38 /* NavBarController.swift */; };
-		0912EDA9299811C10006CC38 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA8299811C10006CC38 /* BaseController.swift */; };
+		0912EDA9299811C10006CC38 /* WABaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDA8299811C10006CC38 /* WABaseController.swift */; };
 		0912EDAB299814160006CC38 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDAA299814160006CC38 /* UIView + ext.swift */; };
 		0912EDB4299815EE0006CC38 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDB3299815EE0006CC38 /* SessionController.swift */; };
 		0912EDB6299815FF0006CC38 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912EDB5299815FF0006CC38 /* ProgressController.swift */; };
@@ -44,7 +44,7 @@
 		0912ED9F299801350006CC38 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		0912EDA22998016C0006CC38 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		0912EDA429980FB30006CC38 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
-		0912EDA8299811C10006CC38 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		0912EDA8299811C10006CC38 /* WABaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WABaseController.swift; sourceTree = "<group>"; };
 		0912EDAA299814160006CC38 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		0912EDB3299815EE0006CC38 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		0912EDB5299815FF0006CC38 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				09E4555B299AD4F300FEC456 /* Views */,
 				0912ED9C299800910006CC38 /* TabBarController.swift */,
 				0912EDA429980FB30006CC38 /* NavBarController.swift */,
-				0912EDA8299811C10006CC38 /* BaseController.swift */,
+				0912EDA8299811C10006CC38 /* WABaseController.swift */,
 				09C73E5029998F85001DACD0 /* BaseView.swift */,
 				0912EDBA29981D010006CC38 /* WAButton.swift */,
 			);
@@ -327,7 +327,7 @@
 				0912EDA32998016C0006CC38 /* R.swift in Sources */,
 				09C73E5129998F85001DACD0 /* BaseView.swift in Sources */,
 				09E45558299AA9B800FEC456 /* WeekdayView.swift in Sources */,
-				0912EDA9299811C10006CC38 /* BaseController.swift in Sources */,
+				0912EDA9299811C10006CC38 /* WABaseController.swift in Sources */,
 				0912ED882997F8370006CC38 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
