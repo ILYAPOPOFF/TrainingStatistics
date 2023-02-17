@@ -34,6 +34,11 @@ enum R {
         enum Overview {
             static var allWorkOutsButton = "All Workouts"
         }
+        
+        enum Session {
+            static let elapsedTime = "Elapsed Time"
+            static let remainingTime = "Remaining Time"
+        }
     }
     
     enum Image {

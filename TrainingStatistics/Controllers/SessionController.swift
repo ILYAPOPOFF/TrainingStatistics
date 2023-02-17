@@ -10,12 +10,15 @@ import UIKit
 class SessionViewController: WABaseController {
     
     private let timerView = TimerView()
-    
-    private let timerDuration = 3.0
+    private let timerDuration = 3615.0
     
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
-            timerView.startTimer()
+            timerView.startTimer { progress in 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.navBarRightButtonHandler()
+                }
+            }
         } else {
             timerView.pauseTimer()
         }
@@ -31,7 +34,6 @@ class SessionViewController: WABaseController {
         
         setTitleForNavbarButton("Start   ", at: .left)
     }
-    
 }
 
 extension SessionViewController {
@@ -49,7 +51,6 @@ extension SessionViewController {
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            timerView.heightAnchor.constraint(equalToConstant: 500),
             
         ])
     }
@@ -64,6 +65,14 @@ extension SessionViewController {
         addNavbarButton(at: .right, with: "Finish")
         
         timerView.configure(with: timerDuration, progress: 0)
+        
+        //Метод для остановки таймера по его заполнению
+        timerView.callBack = { progress in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.navBarRightButtonHandler()
+                print(progress)
+            }
+        }
     }
 }
 
