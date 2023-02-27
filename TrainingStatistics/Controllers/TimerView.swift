@@ -17,7 +17,7 @@ final class TimerView: WABaseInfoView {
     
     private let elapsedTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = R.Strings.Session.elapsedTime
+        label.text = R.Strings.Session.Stats.elapsedTime
         label.font = R.Fonts.helveticaRegular(with: 14)
         label.textColor = R.Colors.inActive
         label.textAlignment = .center
@@ -34,7 +34,7 @@ final class TimerView: WABaseInfoView {
     
     private let remainigTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = R.Strings.Session.remainingTime
+        label.text = R.Strings.Session.Stats.remainingTime
         label.font = R.Fonts.helveticaRegular(with: 14)
         label.textColor = R.Colors.inActive
         label.textAlignment = .center
@@ -58,6 +58,22 @@ final class TimerView: WABaseInfoView {
         return view
     }()
     
+    private let bottomStackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillProportionally
+        view.spacing = 25
+        return view
+    }()
+    
+    private let completedPercentView = PercentView()
+    private let remainingPercentView = PercentView()
+    
+    private let bottomSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.Colors.separator
+        return view
+    }()
+    
     private let progressView = ProgressView()
     
     private var timer = Timer()
@@ -73,11 +89,14 @@ final class TimerView: WABaseInfoView {
         let tempCurrentValue = progress > duration ? duration : progress
         let goalValueDevider = duration == 0 ? 1 : duration
         let percent = tempCurrentValue / goalValueDevider
+        let roundedPercent = Int(round(percent * 100))
         
         //Добавление значений в Таймер
         elapsedTimeValueLabel.text = getDisplayedString(from: Int(tempCurrentValue))
         remainigTimeValueLabel.text = getDisplayedString(from: Int(duration) - Int(tempCurrentValue))
-        
+        completedPercentView.configure(title: "Completed".uppercased(), andValue: roundedPercent)
+        remainingPercentView.configure(title: "Remaining".uppercased(), andValue: 100 - roundedPercent)
+        progressView.drawProgress(with: CGFloat(percent))
         
         progressView.drawProgress(with: CGFloat(percent))
     }
@@ -109,7 +128,8 @@ final class TimerView: WABaseInfoView {
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] timer in
             guard  let self = self else { return }
-            self.timerProgress -= 0.1
+            self.timerProgress -= self.timerDuration * 0.02
+            
             if self.timerProgress <= 0 {
                 self.timerProgress = 0
                 timer.invalidate()
@@ -125,10 +145,11 @@ extension TimerView {
         
         setupView(progressView)
         setupView(timeStackView)
+        setupView(bottomStackView)
         
-        [elapsedTimeLabel, elapsedTimeValueLabel, remainigTimeLabel, remainigTimeValueLabel].forEach {
-            timeStackView.addArrangedSubview($0)
-        }
+        [elapsedTimeLabel, elapsedTimeValueLabel, remainigTimeLabel, remainigTimeValueLabel].forEach(timeStackView.addArrangedSubview)
+        
+        [completedPercentView, bottomSeparatorView, remainingPercentView].forEach(bottomStackView.addArrangedSubview)
     }
     
     override func constraintViews() {
@@ -144,6 +165,13 @@ extension TimerView {
             
             timeStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
             timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor),
+            
+            bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28),
+            bottomStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 35),
+            bottomStackView.widthAnchor.constraint(equalToConstant: 200),
+            
+            bottomSeparatorView.widthAnchor.constraint(equalToConstant: 1),
         ])
     }
     
